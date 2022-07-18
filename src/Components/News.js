@@ -21,8 +21,8 @@ const News = (props) => {
         // console.log(parsedData); // This is for testing only.
         setArticles(parsedData.articles);
         setTotalResults(parsedData.totalResults);
+        props.setProgress(100); 
         setLoading(false);
-        props.setProgress(100);
     };
 
     useEffect(() => {
