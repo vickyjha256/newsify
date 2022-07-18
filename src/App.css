@@ -32,7 +32,18 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Below styling block is used for hiding scroll bar in Newsify App. 
+This is for fixing the double scrollbar issue of infinite scroll component of react. */
+* {
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
