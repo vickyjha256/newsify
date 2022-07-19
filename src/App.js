@@ -9,7 +9,7 @@ import LoadingBar from 'react-top-loading-bar';
 const App = () => {
   const pageSize = 9; // This is for updating pageSize quickly.
   const apiKey = process.env.REACT_APP_NEWS_API;
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(0);
 
   return (
     <div>
@@ -18,7 +18,8 @@ const App = () => {
         <LoadingBar height={3} color='darkslateblue' progress={progress} />
         <Routes>
           {/* <Route exact path="/" element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />} /> */}
-          <Route exact path="/" element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />} />
+          <Route exact path="/" element={<News setProgress={setProgress} apiKey={apiKey} key="home" pageSize={pageSize} country="in" category="general" />} />          
+          <Route exact path="/general" element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />} />          
           <Route exact path="/technology" element={<News setProgress={setProgress} apiKey={apiKey} key="technology" pageSize={pageSize} country="in" category="technology" />} />
           <Route exact path="/sports" element={<News setProgress={setProgress} apiKey={apiKey} key="sports" pageSize={pageSize} country="in" category="sports" />} />
           <Route exact path="/entertainment" element={<News setProgress={setProgress} apiKey={apiKey} key="entertainment" pageSize={pageSize} country="in" category="entertainment" />} />

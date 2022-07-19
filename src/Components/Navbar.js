@@ -4,13 +4,14 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   let location = useLocation();
   return (
-    // This is for dark mode. We are using backticks so we can use template literals [Syntax: ${ }] inside a string.
+    // style={{pointerEvents: 'none'}}
     <div>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         {/* <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}> */}
 
         <div className="container-fluid">
-          <Link style={{pointerEvents: 'none'}} className="navbar-brand" to="/"><b>Newsify</b></Link>
+          <Link className="navbar-brand" to="/"><b>Newsify</b></Link>
+          
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className='navbar-toggler-icon'></span>
           </button>
