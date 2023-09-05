@@ -11,11 +11,28 @@ const App = () => {
   const apiKey = process.env.REACT_APP_NEWS_API;
   const [progress, setProgress] = useState(0);
 
+  const [mode, setmode] = useState('light'); // Whether dark mode is enabled or not.
+  if (mode === 'light') {
+    document.body.style.backgroundColor = '#029c8e';
+  }
+  const toggleMode = () => {
+    if (mode === 'light') {
+      setmode('dark');
+      document.body.style.backgroundColor = '#000029';
+      // showAlert("Dark mode has been enabled.", "success");
+    }
+    else {
+      setmode('light');
+      document.body.style.backgroundColor = '#029c8e';
+      // showAlert("Light mode has been enabled.", "success");
+    }
+  }
+
   return (
     <div>
       <Router>
-        <Navbar />
-        <LoadingBar height={3} color='darkslateblue' progress={progress} />
+        <Navbar mode={mode} toggleMode={toggleMode}/>
+        <LoadingBar height={3} color='blue' progress={progress} />
         <Routes>
           {/* <Route exact path="/" element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />} /> */}
           <Route exact path="/" element={<News setProgress={setProgress} apiKey={apiKey} key="home" pageSize={pageSize} country="in" category="general" />} />          

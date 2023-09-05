@@ -21,8 +21,8 @@ const News = (props) => {
         // console.log(parsedData); // This is for testing only.
         setArticles(parsedData.articles);
         setTotalResults(parsedData.totalResults);
-        props.setProgress(100); 
         setLoading(false);
+        props.setProgress(100); 
     };
 
     useEffect(() => {
@@ -54,7 +54,7 @@ const News = (props) => {
 
     return (
         <>
-            <h1 style={{ marginTop: '75px' }} align="center">Newsify - {props.category.charAt(0).toUpperCase() + props.category.slice(1)} Headlines</h1>
+            <h1 style={{ marginTop: '75px' }} align="center">Newsify - {props.category.charAt(0).toUpperCase() + props.category.slice(1)} News</h1>
             {loading && <Spinner />}
             {/* <InfiniteScroll style={{ height: "calc(100vh - 100px)", overflow: "auto"}} dataLength={articles.length} next={fetchMoreData} hasMore={articles.length !== totalResults} loader={<Spinner />}> */}
             <InfiniteScroll dataLength={articles.length} next={fetchMoreData} hasMore={articles.length !== totalResults} loader={<Spinner />}>
